@@ -89,7 +89,8 @@ class _MyHomePageState extends State<MyHomePage> {
     B. 존못 꿀잼 남/여친,
     근데 너무 못생겨서 키스 힘듦''',
 
-    '''A.학점 4년 4.0 받고 대학 졸업까지 모쏠
+    '''
+    A.학점 4년 4.0 받고 대학 졸업까지 모쏠
     
     B. 학점 4년 2.5 받고 연애 
     원하는 만큼 함(깊이, 횟수 모두)''',
@@ -203,8 +204,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
             Container(
+             // width: 120,
+              //height: 30,
               child: RaisedButton(
-                child: Text("선택지A"),
+                child: Text('선택지A'),
                 onPressed: () {
                   setState((){
                   idx ++;
@@ -215,8 +218,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
+              //width: 120,
+             // height: 30,
               child: RaisedButton(
-                child: Text("선택지B"),
+                child: Text('선택지B'),
                 onPressed: () {
                   setState((){
                     idx ++;
