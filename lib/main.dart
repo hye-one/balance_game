@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Balance Game ver0.1'),
+      home: MyHomePage(title: 'Balance Game ver0.2'),
     );
   }
 }
@@ -47,7 +49,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
+  int _timeLeft = 5;
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -58,6 +60,19 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
 
+
+  }
+  void _startCountDown(){
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      if (_timeLeft > 0) {
+        setState(() {
+          _timeLeft--;
+        });
+      }
+      else {
+        timer.cancel();
+      }
+    });
 
   }
   final List<String> _questionBasic = [
@@ -314,7 +329,11 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(fontSize: 20),
 
             ),
-
+            Text(
+              //Timer
+                _timeLeft.toString(),
+              style:  TextStyle(fontSize: 20)
+            ),
             Container(
              // width: 120,
               //height: 30,
@@ -346,7 +365,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-
     );
   }
 }
