@@ -327,12 +327,11 @@ class _MyHomePageState extends State<MyHomePage> {
               //'밸런스 게임 질문 들어갈 곳',
               _questionBasic[idx],
               style: TextStyle(fontSize: 20),
-
             ),
             Text(
               //Timer
                 _timeLeft.toString(),
-              style:  TextStyle(fontSize: 20)
+              style:  TextStyle(fontSize: 10)
             ),
             Container(
              // width: 120,
